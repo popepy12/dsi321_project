@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block title %}Job1{% endblock %} {% block content%}
+<html>
+<head>
+<title>company</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class ='container'>
+        <h1> Job Description</h1>
+          <label>Search</label>
+          <input type="text" name="search">
+          <button type="submit" >ค้นหา</button>
+          <table class = "table table-bordered">
+            <thead>
+              <tr>
+                <th>ตำแหน่ง</th>
+                <th>ลักษณะงาน</th>
+                <th>คุณสมบัติผู้สมัคร</th>
+                <th>ระยะเวลาฝึกงาน</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%for row in datas2 %}
+              <tr>
+                <td>{{row.3}}</td> 
+                <td>{{row.6}}></td>
+                <td>{{row.7}}</td>
+                <td>{{row.8}}</td>
+                <td>{{row.9}}</td>
+              </tr>
+          
+              {% endfor %}
+            </tbody>
+          </table>
+    
+        
+        
+    </div>
+
+</body>
+{% endblock %}
+</html>
