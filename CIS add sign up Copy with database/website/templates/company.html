@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block title %}Company{% endblock %} {% block content%}
+<html>
+
+<head>
+    <title>company</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+  body {
+    background-color: #fff;
+    font-family:'Prompt', Raleway;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 2px solid #e3e0e4;
+    width: 100%;
+    background-color: #fff;
+    font-family:'Prompt', Raleway;
+  }
+
+  tr:hover {background-color: #e3e0e4;}
+
+  th {
+    text-align: center;
+    font-size: 16px;
+    font-family:'Prompt', Raleway;
+    height: 50px;
+  }
+
+  td {
+    text-align: left;
+    font-size: 16px;
+    font-family:'Prompt', Raleway;
+    width: 30%;
+  }
+
+  .search-container {
+    float: right;
+    font-size: 17px;
+    font-family:'Prompt', Raleway;
+    border: white;
+  }
+
+  .search-container button {
+    padding: 4px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    font-family:'Prompt', Raleway;
+    border: none;
+    cursor: pointer;
+  }
+
+  .search-container button:hover {
+    background-color: #fff;
+  }
+
+  h1 {
+    font-family:'Prompt', Raleway;
+    font-size: 30px;
+  }
+</style>
+</head>
+
+<body>
+    <div class ='container'>
+        <h1><b>All Company</b></h1>
+        <div class="search-container">
+          <input type="text" placeholder="Search" name="search" style="border-radius: 8px; background: #e3e0e4; border: none; height: 40px;">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <br>
+        <br>
+        </div>
+    </div>
+    <div class ='container'>
+        <br>
+          <table class = "table">
+          <thead>
+            <tr>
+              <th></th>
+              <th><h4><b>ชื่อบริษัท/หน่วยงาน</b></h4></th>
+              <th><h4><b>ประเภทบริษัท</b></h4></th>
+              <th><h4><b>สถานะ</b></h4></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for row in datas %}
+            <tr>
+              <td>
+                <p id="demo"></p>
+                <script>
+
+                let text = "";
+                for (let i = 0; i < com_img.length; i++) {
+                  
+                  text += '<center>' +com_img[i] + '</center>' + "<br>";
+                }
+                
+                document.getElementById("demo").innerHTML = text;
+                
+                </script></td>
+              <td><a href="{{ url_for('.job1', p=row.0) }}">{{row.3}}</a></td>
+              <td>{{row.4}}</td>
+              <td><center>{{row.9}}</center></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        
+    </div>
+
+</body>
+{% endblock %}
+</html>

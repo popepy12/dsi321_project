@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block title %}Job1{% endblock %} {% block content%}
+<html>
+
+<head>
+  <title>company</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+<style>
+  .search-container {
+    float: right;
+    font-size: 17px;
+    border: white;
+    font-family:'Prompt', Raleway;
+  }
+
+  .search-container button {
+    padding: 4px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    font-family:'Prompt', Raleway;
+  }
+
+  .container {
+    font-family: 'Prompt', Raleway;
+}
+
+  .search-container button:hover {
+    background-color: #fff;
+    font-family:'Prompt', Raleway;
+  }
+</style>
+</head>
+
+<body>
+    <div class ='container'>
+        <h1><b>Job Description</b></h1>
+        <div class="search-container">
+          <input type="text" placeholder="Search" name="search" style="border-radius: 8px; background: #e3e0e4; border: none; height: 32px;">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <br>
+        <br>
+        </div>
+
+          <table class = "table">
+            <thead>
+              <tr>
+                <th>ตำแหน่ง</th>
+                <th>ลักษณะงาน</th>
+                <th>คุณสมบัติผู้สมัคร</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%for row in datas2 %}
+              <tr>
+                <td style="width: 30%;"><h4><b>{{row.3}}</b></h4>
+                  <p>Period: {{row.8}}</p></td> 
+                <td><b>Description: </b><br>{{row.6}}></td>
+                <td><b>Quanlification: </b><br>{{row.7}}</td>
+                <td><button>{{row.9}}</button></td>
+              </tr>
+          
+              {% endfor %}
+            </tbody>
+          </table>
+    
+        
+        
+    </div>
+
+</body>
+{% endblock %}
+</html>

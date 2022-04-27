@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "baseadmin.html" %} {% block title %}Admin Login{% endblock %} 
+{% block content%}
+<form method="POST">
+    <h3 align="center">Log in</h3>
+    <div class="form-group">
+        <label for="adminid">Admin ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="adminid"
+          name="adminid"
+          placeholder="Enter Admin ID"
+        />
+      </div>
+      <div class="form-group">
+        <label for="adminpassword">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="adminpassword"
+          name="adminpassword"
+          placeholder="Enter password"
+        />
+      </div>
+      <br />
+      <center><button type="submit" class="btn btn-primary" style="width:40%; height: 35px; border-radius: 3px;  background-color: #85151c; color: #ffffff; font-size: 13pt; border: none;"> Login</button></center>
+    </form>
+
+    </html>
+{% endblock %}
+</html>
