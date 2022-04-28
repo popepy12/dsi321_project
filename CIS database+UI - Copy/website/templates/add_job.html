@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% extends "baseadmin.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html>
+<head>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  margin: 8px 0;
+  border-radius: 20px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+input[type=text]:focus {
+  border: 2px solid #555;
+}
+
+label {
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  background-color: #595959;
+  color: white;
+  padding: 12px ;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: #a0a09f;
+}
+
+.container {
+  background-color: #e3e0e4;
+  border: 5px;
+  color: #000000;
+  font-family: 'Prompt', Raleway;
+  padding-top: 10px;
+  border-radius: 25px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+
+}
+
+body,html {
+      background-color: #ffffff;
+      height: 100%;
+      font-family:'Prompt', Raleway;
+    }
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    padding-right: 10%;
+  padding-left: 10%;
+}
+
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+  <br>
+  <h1>ADD JOB / เพิ่มตำแหน่งงาน</h1>
+  <br>
+  <form>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Job Position / ตำแหน่งงาน</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required name="Job Position" placeholder="Job Position..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Internship Period / ระยะเวลาฝึกงาน</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required  name="Internship Period" placeholder="Internship Period..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Job Description / รายละเอียดงาน</label>
+    </div>
+    <div class="col-75">
+      <textarea required name="Job Description" placeholder="Job Description.." style="height:120px" ></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Qualification / คุณสมบัติ</label>
+    </div>
+    <div class="col-75">
+      <textarea required  name="Qualification" placeholder="Qualification.." style="height:120px" ></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Link for Apply / ลิ้งค์สมัคร</label>
+    </div>
+    <div class="col-75">
+      <textarea required  name="Link for Apply" placeholder="Link.." ></textarea>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <center><input type="submit" value="Submit" style="width:80%"></center>
+  </div>
+  <br>
+  </form>
+</body>
+{% endblock %}
+</html>
