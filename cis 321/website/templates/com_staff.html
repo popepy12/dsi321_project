@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% extends "base_staff.html" %} {% block title %}Company_admin{% endblock %} {% block content%}
+<html>
+
+<head>
+    <title>company admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<style>
+
+body,html {
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     background-color: #fff;
+     font-family:'Prompt', Raleway;
+ }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    font-family:'Prompt', Raleway;
+  }
+
+  tr:hover {background-color: #e8e6e6;}
+
+  th {
+    text-align: center;
+    font-size: 20px;
+    font-family:'Prompt', Raleway;
+    height: 50px;
+  }
+
+  td {
+    text-align: left;
+    font-size: 16px;
+    font-family:'Prompt', Raleway;
+    width: 20%;
+  }
+
+
+  h1 {
+    font-family:'Prompt', Raleway;
+    float: left;
+  }
+
+a {
+  color: #85151c;
+}
+
+a:hover {
+  color: #595959;
+}
+
+
+.searchbar{
+    margin-left: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #dbd9d9;
+    border-radius: 30px;
+    padding: 10px;
+    width: 40%;
+    }
+
+    .search_input{
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 80%;
+    caret-color:transparent;
+    line-height: 40px;
+    font-size: 16px;
+    transition: width 0.4s linear;
+    }
+
+    .search_input{
+    padding: 0 10px;
+    caret-color:#85151c;
+    }
+
+
+    .searchbar:hover > .search_icon{
+    color: white;
+    background: #85151c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration:none;
+    color:white;
+    }
+    .button {
+      color: #ffffff;
+      border-radius: 25px;
+      border: none;
+      background-color: #85151c;
+      padding: 8px 15px;
+      font-size: 10pt; 
+      font-family:Prompt;
+    }
+
+    .button1:hover {
+      background-color: #3e0000;
+      color: #fff;
+    }
+</style>
+</head>
+
+<body>
+    <div class ='container'>
+      <br>
+        <h1><b>All Company</b></h1>
+        <div class="container h-100">
+            <div class="searchbar">
+              <input class="search_input" type="text" name="" placeholder="Search...">
+              <a class="search_icon"><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+
+          <br>
+        </div>
+    </div>
+    <div class ='container'>
+        <br>
+          <table class = "table">
+          <thead>
+            <tr>
+              <th></th>
+              <th><h4 style="font-size: 13pt; font-family:Prompt;"><b>ชื่อบริษัท/หน่วยงาน</b></h4></th>
+              <th><h4 style="font-size: 13pt; font-family:Prompt;"><b>ประเภทบริษัท</b></h4></th>
+              <th><h4 style="font-size: 13pt; font-family:Prompt;"><b>สถานะ</b></h4></th>
+              <th><a href = "/add_com" style="font-size: 13pt; font-family:Prompt;"><center><button class="button button1"><b>Add Company</b></button></center></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for row in datas %}
+            <tr>
+              <td>
+                <p id="demo"></p>
+                <script>
+                const com_img = ['<img src="http://image.free.in.th/v/2013/io/220422021350.png" alt="agoda" width="350px" height="200px">',
+                ];
+
+                let text = "";
+                for (let i = 0; i < com_img.length; i++) {
+                  text += '<center>' +com_img[i] + '</center>' + "<br>";
+                }
+                
+                document.getElementById("demo").innerHTML = text;
+                
+                </script></td>
+
+              <td><a href="{{ url_for('.job_staff', t=row.0) }}">{{row.3}}</a></td>
+              <td>{{row.4}}</td>
+              <td><center>{{row.9}}</center></td>
+              <td >
+                <br><a href = "#"><center><button class="button button1"><b>Edit</b></button></center></a>
+                <br><a href = "#"><center><button class="button button1"><b>Delete</b></button></center></a>
+              </td>
+
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        
+    </div>
+
+</body>
+{% endblock %}
+</html>
