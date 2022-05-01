@@ -25,14 +25,14 @@
 **Folder cis_dsi321_final**
 * ไฟล์ main.py
 * โฟลเดอร์ website
-  1. ไฟล์ __init__.py
-  2. ไฟล์ auth.py
-  3. ไฟล์ models.py
-  4. ไฟล์ views.py
-  5. โฟลเดอร์ templates
-    - add_com.html
-    - add_job.html
-    - base.html
+    1. ไฟล์ init.py
+    2. ไฟล์ auth.py
+    3. ไฟล์ models.py
+    4. ไฟล์ views.py
+    5. โฟลเดอร์ templates
+        - add_com.html
+        - add_job.html
+        - base.html
     - base_staff.html
     - before_login.html
     - com_staff.html
