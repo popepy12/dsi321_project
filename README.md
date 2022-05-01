@@ -24,13 +24,17 @@
 
 **Folder cis_dsi321_final**
 * ไฟล์ main.py
+    * ใช้ในการสร้างและรัน Application
 * โฟลเดอร์ website
-    - ไฟล์ init.py
-          > ใช้ในการสร้าง Database User & Admin_user 
-    - ไฟล์ auth.py
-    - ไฟล์ models.py
-    - ไฟล์ views.py
-    - โฟลเดอร์ templates
+    1. ไฟล์ init.py
+       - ใช้ในการสร้าง Database User & Admin_user และ ติดตั้ง Flask Application
+    2. ไฟล์ auth.py
+       - ใช้ในการกำหนด route ในการเข้าถึงหน้า Website ต่างๆ
+    3. ไฟล์ models.py
+       - ใช้ในการสร้าง Database Models
+    4. ไฟล์ views.py
+       - ใช้ในการกำหนด Standard route ในการเข้าถึงหน้า Website ต่างๆ
+    5. โฟลเดอร์ templates
         - add_com.html
         - add_job.html
         - base.html
@@ -49,12 +53,12 @@
         - sign_up_staff.html
         - success.html
         - success_staff.html
-    - database.db
+    6. database.db
         - table User
           > ตารางข้อมูลของนักศึกษา มี Attributes คือ Email, Student ID, Password
         - table Admin_User
           > ตารางข้อมูลของผู้ดูแลระบบ มี Attributes คือ Staff ID, Password
-    - dbnew.db
+    7. dbnew.db
         - Company
           > ตารางข้อมูลของบริษัท มี Attributes คือ Company_ID, Staff_ID, Company_Name, Company_Photo, Company_Type, Company_address, Company_Email, Contact_Number, Fax_Number, Established_Data, Company_Detail, Company_Link, Status
         - Job_Position
