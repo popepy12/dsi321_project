@@ -22,6 +22,33 @@
 - การจัดการสถานประกอบการในการเพิ่ม แก้ไข และลบข้อมูลของสถานประกอบการ (Add, Edit and Delete Company)
 - การจัดการรายละเอียดงานของสถานประกอบการในการเพิ่ม แก้ไข และลบข้อมูลของสถานประกอบการ (Add, Edit and Delete Job Description)
 
+**Folder cis_dsi321_final**
+* ไฟล์ main.py
+* โฟลเดอร์ website
+  1. ไฟล์ __init__.py
+  2. ไฟล์ auth.py
+  3. ไฟล์ models.py
+  4. ไฟล์ views.py
+  5. โฟลเดอร์ templates
+    - add_com.html
+    - add_job.html
+    - base.html
+    - base_staff.html
+    - before_login.html
+    - com_staff.html
+    - company.html
+    - error.html
+    - home.html
+    - home_staff.html
+    - job1.html
+    - job_staff.html
+    - login.html
+    - login_staff.html
+    - sign_up.html
+    - sign_up_staff.html
+    - success.html
+    - success_staff.html
+
 **สมาชิกในกลุ่ม**
  1. นายวรท กาญจนาคม   เลขทะเบียนนักศึกษา 6209656070 
  2. นางสาวณัฐจิรา จมูศรี  เลขทะเบียนนักศึกษา 6209656112
