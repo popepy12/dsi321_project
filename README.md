@@ -26,6 +26,7 @@
 * ไฟล์ main.py
 * โฟลเดอร์ website
     - ไฟล์ init.py
+          > ใช้ในการสร้าง Database User & Admin_user 
     - ไฟล์ auth.py
     - ไฟล์ models.py
     - ไฟล์ views.py
@@ -57,7 +58,7 @@
         - Company
           > ตารางข้อมูลของบริษัท มี Attributes คือ Company_ID, Staff_ID, Company_Name, Company_Photo, Company_Type, Company_address, Company_Email, Contact_Number, Fax_Number, Established_Data, Company_Detail, Company_Link, Status
         - Job_Position
-          >> ตารางข้อมูลของตำแหน่งงาน มี Attributes คือ Job_Position_ID, Company_ID, Staff_ID, Job_Position_Name, Job_Amount_Required, Compensation, Job_Description, Position_Qualification, Working_Period, Application_Deadline, Job_Position_Link
+          > ตารางข้อมูลของตำแหน่งงาน มี Attributes คือ Job_Position_ID, Company_ID, Staff_ID, Job_Position_Name, Job_Amount_Required, Compensation, Job_Description, Position_Qualification, Working_Period, Application_Deadline, Job_Position_Link
 
 **สมาชิกในกลุ่ม**
  1. นายวรท กาญจนาคม   เลขทะเบียนนักศึกษา 6209656070 
