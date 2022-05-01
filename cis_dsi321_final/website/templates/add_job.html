@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% extends "base_staff.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html>
+<head>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face { 
+  font-family: 'TUFont'; 
+  src: local('TUFont'), 
+  url('/static/fonts/TUFont.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  margin: 8px 0;
+  border-radius: 20px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+input[type=text]:focus {
+  border: 2px solid #555;
+}
+
+label {
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  background-color: #595959;
+  color: white;
+  padding: 12px ;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: #a0a09f;
+}
+
+.container {
+  background-color: #e3e0e4;
+  border: 5px;
+  color: #000000;
+  font-family: 'TUFont', Raleway;
+  padding-top: 10px;
+  border-radius: 25px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+
+}
+
+body,html {
+      background-color: #ffffff;
+      height: 100%;
+      font-family:'TUFont', Raleway;
+    }
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    padding-right: 10%;
+  padding-left: 10%;
+}
+
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+  <br>
+  <h1 style = "float: left;">ADD JOB / เพิ่มตำแหน่งงาน</h1>
+  <br>
+  <a style = "background-color: #85151c; color: white; padding: 8px 15px;
+  border-radius: 25px; float: right;  text-decoration: none" href="/com_staff" >กลับ</a>
+  <form action="{{ url_for('auth.insertjob1') }}" method="post">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Job Position ID / รหัสของตำแหน่งงาน</label>
+      </div>
+      <div class="col-75">
+        <input type="text" required name="Job_Position_ID" placeholder="Job Position ID..">
+      </div>
+    </div>
+
+    <div>
+      <input type="hidden" required name="Job_Amount_Required" >
+    </div>
+    <div>
+      <input type="hidden" required name="Compensation" >
+    </div>
+    <div>
+      <input type="hidden" required name="Application_Deadline" >
+    </div>
+    <div>
+      <input type="hidden" required name="User_Staff_ID" >
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Company ID / รหัสของบริษัท</label>
+      </div>
+      <div class="col-75">
+        <input type="text" value="" required name="Company_ID" placeholder="Company ID..">
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Job Position / ตำแหน่งงาน</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required name="Job_Position_Name" placeholder="Job Position..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Job Description / รายละเอียดงาน</label>
+    </div>
+    <div class="col-75">
+      <textarea required name="Job_Description" placeholder="Job Description.." style="height:120px" ></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Qualification / คุณสมบัติ</label>
+    </div>
+    <div class="col-75">
+      <textarea required  name="Position_Qualification" placeholder="Qualification.." style="height:120px" ></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Internship Period / ช่วงเวลาฝึกงาน</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required  name="Working_Period" placeholder="Internship Period..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Link for Apply / ลิ้งค์สมัคร</label>
+    </div>
+    <div class="col-75">
+      <textarea required  name="Job_Position_Link" placeholder="Link.." ></textarea>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <center><input type="submit" value="ส่ง" style="width:80%"></center>
+  </div>
+  <br>
+  </form>
+</body>
+{% endblock %}
+</html>

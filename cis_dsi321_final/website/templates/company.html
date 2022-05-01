@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block title %}Company{% endblock %} {% block content%}
+<html>
+
+<head>
+    <title>company</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<style>
+  @font-face { 
+    font-family: 'TUFont';
+    src: local('TUFont'),
+    url('/static/fonts/TUFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body,html {
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     background-color: #fff;
+     font-family:'TUFont', Raleway;
+ }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    background-color: #fff;
+    font-family:'TUFont', Raleway;
+  }
+
+  tr:hover {background-color: #e8e6e6;}
+
+  th {
+    text-align: center;
+    font-size: 20px;
+    font-family:'TUFont', Raleway;
+    height: 50px;
+  }
+
+  td {
+    text-align: left;
+    font-size: 16px;
+    font-family:'TUFont', Raleway;
+    width: 20%;
+  }
+
+
+  h2 {
+    font-family:'TUFont', Raleway;
+    float: left;
+  }
+
+a {
+  color: #85151c;
+}
+
+a:hover {
+  color: #595959;
+}
+
+
+.searchbar{
+    margin-left: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #dbd9d9;
+    border-radius: 30px;
+    padding: 10px;
+    width: 30%;
+    display: flex;
+    float: right;
+    }
+
+  .search_input{
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 100%;
+    caret-color:transparent;
+    line-height: 40px;
+    font-size: 16px;
+    transition: width 0.4s linear;
+    }
+
+  .search_input{
+    padding: 0 20px;
+    caret-color:#85151c;
+    }
+
+
+    .searchbar:hover > .search_icon{
+    color: white;
+    background: #85151c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 45px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color:white;
+    border: none;
+    background-color: #dbd9d9;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class ='container'>
+      <br>
+        <h2><b>บริษัททั้งหมด</b></h2>
+        <div class="container h-100">
+            <div class="searchbar">
+              <input class="search_input" type="text" name="" placeholder="ค้นหา...">
+                <button class="search_icon"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+
+          <br>
+        </div>
+    </div>
+    <div class="container">
+      <div style="overflow-x:auto;">
+        <br>
+          <table class = "table">
+          <thead>
+            <tr>
+              <!-- <th><h4 style="font-size: 14pt; font-family:TUFont;"><b>ลำดับที่</b></h4></th> -->
+              <th><h4 style="font-size: 14pt; font-family:TUFont;"><b>ชื่อบริษัท/หน่วยงาน</b></h4></th>
+              <th><h4 style="font-size: 14pt; font-family:TUFont;"><b>ประเภทบริษัท</b></h4></th>
+              <th><h4 style="font-size: 14pt; font-family:TUFont;"><b>สถานะ</b></h4></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for row in datas %}
+            <tr>
+              <!-- <td style="font-size: 12pt; position: middle;" ><center><br><br><b>{{row.0}}</b></center></td> -->
+
+              <td style="font-size: 12pt;"><br><b><a style = "text-decoration: none;" href="{{ url_for('.job1', t=row.0) }}" > {{row.2}}<br><br></a></b></td>
+              <td style="font-size: 12pt;"><br><b>{{row.4}}<br><br></b></td>
+              <td style="font-size: 12pt;"><center><br><b>{{row.12}}<br><br></b></center></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>  
+    </div>
+</body>
+{% endblock %}
+</html>

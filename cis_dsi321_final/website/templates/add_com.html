@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+{% extends "base_staff.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html>
+<head>
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <meta charset=utf-8 />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face { 
+  font-family: 'TUFont'; 
+  src: local('TUFont'), 
+  url('/static/fonts/TUFont.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  margin: 8px 0;
+  border-radius: 20px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+input[type=text]:focus {
+  border: 2px solid #555;
+}
+
+label {
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  background-color: #595959;
+  color: white;
+  padding: 12px ;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* input[type=submit]:hover {
+  background-color: #a0a09f;
+} */
+
+.container {
+  background-color: #e3e0e4;
+  border: 5px;
+  color: #000000;
+  font-family: 'TUFont', Raleway;
+  padding-top: 10px;
+  border-radius: 25px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+
+}
+
+body,html {
+      background-color: #ffffff;
+      height: 100%;
+      font-family:'TUFont', Raleway;
+    }
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    padding-right: 10%;
+  padding-left: 10%;
+}
+
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+input[type=file]{
+    width: 100%;
+    opacity: 0.7;
+    font-family:'TUFont', Raleway;
+      font-size: 17px;
+    height: 40px;
+    position: center;
+    }
+
+</style>
+</head>
+
+<body>
+  <h1 style = "float: left;">ADD COMPANY / เพิ่มสถานประกอบการ</h1>
+  <br>
+  <a style = "background-color: #85151c; color: white; padding: 8px 15px;
+  border-radius: 25px; float: right; text-decoration: none;" href="/com_staff" >กลับ</a>
+        <form action="{{ url_for('auth.insert') }}" method="post">
+
+         <div class="row">
+            <div class="col-25">
+              <label for="fname">No. / ลำดับที่</label>
+            </div>
+            <div class="col-75">
+              <input type="text" required class="form-control"  name="Company_ID" style="height:60px" placeholder="No..">
+            </div>
+        </div>
+
+         <div class="form-group">
+           <input type="hidden" class="form-control"  name="Company_Photo">
+         </div>
+
+         <div class="form-group">
+          <input type="hidden" class="form-control"  name="User_Staff_ID">
+        </div>
+
+
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Company Name / ชื่อสถานประกอบการ</label>
+          </div>
+          <div class="col-75">
+            <input type="text" required class="form-control"  name="Company_Name" style="height:60px"placeholder="Name..">
+          </div>
+      </div>
+
+        
+        <div class="form-group">
+          <input type="hidden" class="form-control"  name="Company_Address">
+        </div>
+        <div class="form-group">
+          <input type="hidden" class="form-control"  name="Company_Email">
+        </div>
+        <div class="form-group">
+          <input type="hidden" class="form-control"  name="Contact_Number">
+        </div>
+        <div class="form-group">
+          <input type="hidden" class="form-control"  name="Fax_Number">
+        </div>
+         <div class="form-group">
+           <input type="hidden" class="form-control"  name="Company_Details">
+         </div>
+         <div class="form-group">
+           <input type="hidden" class="form-control"  name="Established_Date">
+         </div>
+         <div class="form-group">
+          <input type="hidden" class="form-control"  name="Company_Link">
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Company or Organization Type / ประเภทของบริษัทหรือหน่วยงาน</label>
+          </div>
+          <div class="col-75">
+            <textarea required name="Company_Type" placeholder="Type.." style="height:120px" ></textarea>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-25">
+            <label for="status">Application Status / สถานะการสมัคร</label>
+          </div>
+          <div class="col-75">
+            <select type="text" required name="Status" placeholder="status.." style="height:60px">
+              <option value="เปิดรับสมัคร "style = "font-size:17px;">เปิดรับสมัคร</option>
+              <option value="ปิดรับสมัคร" style = "font-size:17px;">ปิดรับสมัคร</option>
+            </select>
+          </div>
+        </div>
+
+
+        <br>
+
+        <div class="row">
+          <center><input type="submit" value="ส่ง" style="width:80%"></center>
+        </div>
+        <br>
+        </form>
+</body>
+{% endblock %}
+</html>
