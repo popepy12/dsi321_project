@@ -63,7 +63,7 @@
 **เว็บไซต์ที่ทำการ Deploy**
 
 
-[projectdsi321](https://projectdsi321.herokuapp.com/)
+[Project_DSI321_Website](https://projectdsi321.herokuapp.com/)
 
 **สมาชิกในกลุ่ม**
  1. นายวรท กาญจนาคม   เลขทะเบียนนักศึกษา 6209656070 
