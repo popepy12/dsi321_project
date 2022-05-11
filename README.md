@@ -22,47 +22,14 @@
 - การจัดการสถานประกอบการในการเพิ่ม แก้ไข และลบข้อมูลของสถานประกอบการ (Add, Edit and Delete Company)
 - การจัดการรายละเอียดงานของสถานประกอบการในการเพิ่ม แก้ไข และลบข้อมูลของสถานประกอบการ (Add, Edit and Delete Job Description)
 
-**Folder cis_dsi321_final**
-* ไฟล์ main.py
-    * ใช้ในการสร้างและรัน Application
-* โฟลเดอร์ website
-    1. ไฟล์ init.py
-       - ใช้ในการสร้าง Database User & Admin_user และ ติดตั้ง Flask Application
-    2. ไฟล์ auth.py
-       - ใช้ในการกำหนด route ในการเข้าถึงหน้า Website ต่างๆ
-    3. ไฟล์ models.py
-       - ใช้ในการสร้าง Database Models
-    4. ไฟล์ views.py
-       - ใช้ในการกำหนด Standard route ในการเข้าถึงหน้า Website ต่างๆ
-    5. โฟลเดอร์ templates
-        - add_com.html
-        - add_job.html
-        - base.html
-        - base_staff.html
-        - before_login.html
-        - com_staff.html
-        - company.html
-        - error.html
-        - home.html
-        - home_staff.html
-        - job1.html
-        - job_staff.html
-        - login.html
-        - login_staff.html
-        - sign_up.html
-        - sign_up_staff.html
-        - success.html
-        - success_staff.html
-    6. database.db
-        - table User
-          > ตารางข้อมูลของนักศึกษา มี Attributes คือ Email, Student ID, Password
-        - table Admin_User
-          > ตารางข้อมูลของผู้ดูแลระบบ มี Attributes คือ Staff ID, Password
-    7. dbnew.db
-        - Company
-          > ตารางข้อมูลของบริษัท มี Attributes คือ Company_ID, Staff_ID, Company_Name, Company_Photo, Company_Type, Company_address, Company_Email, Contact_Number, Fax_Number, Established_Data, Company_Detail, Company_Link, Status
-        - Job_Position
-          > ตารางข้อมูลของตำแหน่งงาน มี Attributes คือ Job_Position_ID, Company_ID, Staff_ID, Job_Position_Name, Job_Amount_Required, Compensation, Job_Description, Position_Qualification, Working_Period, Application_Deadline, Job_Position_Link
+**ขั้นตอนการ Deploy**
+
+1. Download และ Install Heroku
+2. Login เข้าสู่ระบบของ Heroku ใน command line โดยใช้คำสั่ง *heroku login*
+3. ทำการ Clone โปรเจคที่เราจะ Deploy จากใน Local Machine โดยใช้คำสั่ง *heroku git:clone -a {ชื่อโปรเจคที่เรามีภายในเครื่อง}*
+4. ทำการเรียกใช้โปรเจคนั้น โดยใช้คำสั่ง *cd {ชื่อโปรเจคที่เรามีภายในเครื่อง}*
+5. ทำการแก้ไข code ที่เรา Clone เข้ามา เพื่อให้สามารถ Deploy ใน Heroku ได้
+6. ทำการ Deploy ใน Heroku โดยใช้ Git
 
 **เว็บไซต์ที่ทำการ Deploy**
 
