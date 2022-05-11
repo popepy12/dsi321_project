@@ -24,8 +24,8 @@
 
 **การติดตั้ง**
 ใช้ pip เพื่อติดตั้งแพคเกจที่จำเป็น
-pip install -r requirements.txt 
 
+pip install -r requirements.txt 
 
 **ขั้นตอนการ Deploy**
 
