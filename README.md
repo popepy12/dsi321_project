@@ -31,16 +31,25 @@ pip install -r requirements.txt
 
 1. Download และ Install Heroku
 2. Login เข้าสู่ระบบของ Heroku ใน command line โดยใช้คำสั่ง 
-    * heroku login
-4. ทำการ Clone โปรเจคที่เราจะ Deploy จากใน Local Machine โดยใช้คำสั่ง 
-    * heroku git:clone -a {ชื่อโปรเจคที่เรามีภายในเครื่อง}
-6. ทำการเรียกใช้โปรเจคนั้น โดยใช้คำสั่ง 
-    * cd {ชื่อโปรเจคที่เรามีภายในเครื่อง}
+    
+    heroku login
+    
+4. ทำการ Clone โปรเจคที่เราจะ Deploy จากใน Local Machine โดยใช้คำสั่ง
+ 
+    heroku git:clone -a {ชื่อโปรเจคที่เรามีภายในเครื่อง}
+    
+6. ทำการเรียกใช้โปรเจคนั้น โดยใช้คำสั่ง
+
+    cd {ชื่อโปรเจคที่เรามีภายในเครื่อง}
+    
 8. ทำการแก้ไข code ที่เรา Clone เข้ามา เพื่อให้สามารถ Deploy ใน Heroku ได้
-9. ทำการ Deploy ใน Heroku โดยใช้ Git โดยใช้คำสั่ง 
-    * git add .
-    * git commit -am "make it better"
-    * git push heroku master
+9. ทำการ Deploy ใน Heroku โดยใช้ Git โดยใช้คำสั่ง
+ 
+    git add .
+    
+    git commit -am "make it better"
+    
+    git push heroku master
 
 **เว็บไซต์ที่ทำการ Deploy**
 
