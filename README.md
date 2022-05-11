@@ -28,6 +28,10 @@
 
 pip install -r requirements.txt 
 
+**การ RUN App**
+
+python main.py
+
 **ขั้นตอนการ Deploy**
 
 1. Download และ Install Heroku
