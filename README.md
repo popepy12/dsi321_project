@@ -24,6 +24,8 @@
 
 **การติดตั้ง**
 
+pip install -r requirements.txt 
+
 
 **ขั้นตอนการ Deploy**
 
