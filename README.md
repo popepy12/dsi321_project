@@ -24,7 +24,7 @@
 
 **การติดตั้ง**
 
-ใช้ pip install -r requirements.txt เพื่อติดตั้งแพคเกจที่จำเป็น
+ใช้คำสั่ง pip install -r requirements.txt เพื่อติดตั้งแพคเกจที่จำเป็น
 
 **การ RUN App**
 
